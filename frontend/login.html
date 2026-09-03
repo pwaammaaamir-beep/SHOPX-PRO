@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ورود مدیریت | SHOPX PRO</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Tahoma, Arial, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+.login-box {
+    width: 90%;
+    max-width: 400px;
+    background: #151515;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255,0,0,.25);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h1 span {
+    color: #ff3030;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #ff3030;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: 0;
+    border-radius: 10px;
+    background: #e50914;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff2020;
+}
+
+button:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+#error {
+    display: none;
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #351111;
+    color: #ff7777;
+    text-align: center;
+}
+
+#success {
+    display: none;
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #103519;
+    color: #70e080;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <h1>
+        SHOPX <span>PRO</span>
+    </h1>
+
+    <div class="subtitle">
+        ورود به پنل مدیریت
+    </div>
+
+    <form id="loginForm">
+
+        <label for="username">
+            نام کاربری
+        </label>
+
+        <input
+            id="username"
+            type="text"
+            placeholder="admin"
+            autocomplete="username"
+            required
+        >
+
+        <label for="password">
+            رمز عبور
+        </label>
+
+        <input
+            id="password"
+            type="password"
+            placeholder="رمز عبور"
+            autocomplete="current-password"
+            required
+        >
+
+        <button id="loginButton" type="submit">
+            🔐 ورود به پنل
+        </button>
+
+    </form>
+
+    <div id="error"></div>
+
+    <div id="success">
+        ورود موفق بود، در حال ورود...
+    </div>
+
+</div>
+
+<script>
+
+const form =
+    document.getElementById("loginForm");
+
+const usernameInput =
+    document.getElementById("username");
+
+const passwordInput =
+    document.getElementById("password");
+
+const button =
+    document.getElementById("loginButton");
+
+const errorBox =
+    document.getElementById("error");
+
+const successBox =
+    document.getElementById("success");
+
+
+form.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    errorBox.style.display = "none";
+    successBox.style.display = "none";
+
+    const username =
+        usernameInput.value.trim();
+
+    const password =
+        passwordInput.value;
+
+    if (!username || !password) {
+        showError("نام کاربری و رمز عبور را وارد کنید.");
+        return;
+    }
+
+    button.disabled = true;
+    button.textContent = "در حال بررسی...";
+
+    try {
+
+        const response = await fetch(
+            "/api/admin/login",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            }
+        );
+
+        const data =
+            await response.json();
+
+        if (response.ok && data.success) {
+
+            successBox.style.display = "block";
+
+            setTimeout(function() {
+
+               window.location.href = "/admin/panel";
+
+            }, 700);
+
+        } else {
+
+            showError(
+                data.message ||
+                "نام کاربری یا رمز عبور اشتباه است."
+            );
+
+            button.disabled = false;
+            button.textContent = "🔐 ورود به پنل";
+        }
+
+    } catch (error) {
+
+        showError(
+            "سرور در دسترس نیست. مطمئن شو server.js روشن است."
+        );
+
+        button.disabled = false;
+        button.textContent = "🔐 ورود به پنل";
+    }
+
+});
+
+
+function showError(message) {
+
+    errorBox.textContent = message;
+    errorBox.style.display = "block";
+
+}
+
+</script>
+
+</body>
+</html>

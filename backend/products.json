@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "هودی مشکی اسپرت",
+    "price": 1100000,
+    "oldPrice": 0,
+    "discount": 0,
+    "rating": 5,
+    "colors": [
+      "مشکی"
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800",
+    "description": "هودی مشکی اسپرت با طراحی زیبا و مناسب استفاده روزمره."
+  },
+  {
+    "id": 2,
+    "name": "کفش اسپرت سفید",
+    "price": 1850000,
+    "oldPrice": 0,
+    "discount": 0,
+    "rating": 5,
+    "colors": [
+      "سفید"
+    ],
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800",
+    "description": "کفش اسپرت سفید راحت و مناسب استفاده روزانه."
+  },
+  {
+    "id": 3,
+    "name": "ساعت هوشمند",
+    "price": 2450000,
+    "oldPrice": 0,
+    "discount": 0,
+    "rating": 5,
+    "colors": [
+      "مشکی"
+    ],
+    "sizes": [],
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800",
+    "description": "ساعت هوشمند مدرن با طراحی شیک و امکانات کاربردی."
+  },
+  {
+    "id": 4,
+    "name": "شلوار اسپرت مشکی",
+    "price": 990000,
+    "oldPrice": 1100000,
+    "discount": 10,
+    "rating": 5,
+    "colors": [
+      "مشکی"
+    ],
+    "sizes": [],
+    "image": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800",
+    "description": "شلوار اسپرت مشکی مناسب استفاده روزمره"
+  }
+]

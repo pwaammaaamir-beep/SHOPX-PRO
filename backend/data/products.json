@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "هودی مشکی Urban",
+    "price": 1100000,
+    "oldPrice": 1400000,
+    "discount": 21,
+    "category": "لباس",
+    "description": "هودی مشکی با طراحی مدرن و مناسب استفاده روزمره.",
+    "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=80",
+    "stock": 20,
+    "colors": [
+      "مشکی",
+      "سفید",
+      "بنفش"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "هدفون Pulse Pro",
+    "price": 1500000,
+    "oldPrice": 1900000,
+    "discount": 21,
+    "category": "دیجیتال",
+    "description": "هدفون بی‌سیم با طراحی حرفه‌ای و صدای باکیفیت.",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80",
+    "stock": 15,
+    "colors": [
+      "مشکی",
+      "سفید"
+    ],
+    "sizes": [
+      "استاندارد"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "ساعت Nova",
+    "price": 2200000,
+    "oldPrice": 2700000,
+    "discount": 18,
+    "category": "اکسسوری",
+    "description": "ساعت مدرن با ظاهر شیک و مناسب استفاده روزانه.",
+    "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=80",
+    "stock": 12,
+    "colors": [
+      "مشکی",
+      "نقره‌ای"
+    ],
+    "sizes": [
+      "استاندارد"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "کتانی Street",
+    "price": 1800000,
+    "oldPrice": 2200000,
+    "discount": 18,
+    "category": "کفش",
+    "description": "کتانی اسپرت و سبک برای استفاده روزمره.",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80",
+    "stock": 25,
+    "colors": [
+      "قرمز",
+      "مشکی",
+      "سفید"
+    ],
+    "sizes": [
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ]
+  }
+]
